@@ -16,17 +16,22 @@ let rec insert g p l=
                  else
                  'o'::List.tail(l)
          |(_,x::xs)->x::(insert g (p-1) xs)
-
+         
+let refString l = sprintf (" %c | %c | %c \n------------\n %c | %c | %c \n------------\n %c | %c | %c " )
+                      (take_element 0 l)
+                      (take_element 1 l)
+                      (take_element 2 l)
+                      (take_element 3 l)
+                      (take_element 4 l)
+                      (take_element 5 l)
+                      (take_element 6 l)
+                      (take_element 7 l)
+                      (take_element 8 l)
+                      
 let tris = [' ';' ';' ';' ';' ';' ';' ';' ';' ']
+let spiegazioneTris = refString ['0';'1';'2';'3';'4';'5';'6';'7';'8']
+let trisInitial = refString tris
 
-
-
-let rec listaUguale l1 l2 = 
-    match (l1,l2) with
-        ([],[])->true
-        |(x::xs,y::ys)->if(x=y)then listaUguale xs ys
-                        else
-                        false
 
 
 
@@ -54,19 +59,7 @@ let verificaVittoriaY l=
                 |l  when (((take_element 2 l )='o')&&((take_element 5 l )='o')&&((take_element 8 l )='o')) -> true
                 |_ ->false
 
-let refString l = sprintf (" %c | %c | %c \n------------\n %c | %c | %c \n------------\n %c | %c | %c " )
-                      (take_element 0 l)
-                      (take_element 1 l)
-                      (take_element 2 l)
-                      (take_element 3 l)
-                      (take_element 4 l)
-                      (take_element 5 l)
-                      (take_element 6 l)
-                      (take_element 7 l)
-                      (take_element 8 l)
 
-let trisInitial = refString tris
-let spiegazioneTris = refString ['0';'1';'2';'3';'4';'5';'6';'7';'8']
 let rec giocoTris x l = 
     match x with 
         4-> printfn "Giocatore X:"

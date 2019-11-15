@@ -1,6 +1,6 @@
 ﻿module Impl
 
-let NomeCognome : string = "Mionome Miocognome" // <---- SCRIVI IN QUESTA STRINGA IL TUO NOME E COGNOME
+let NomeCognome : string = "Matteo Pagano" // <---- SCRIVI IN QUESTA STRINGA IL TUO NOME E COGNOME
 
 (*
 Dato un valore x ed una lista l, restituisce la posizione dell'ultima occorrenza di x nella lista. 

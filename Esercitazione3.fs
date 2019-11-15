@@ -44,16 +44,14 @@ let rec isThere (n: 'a) (l : 'a list)=
                 else isThere n xs
 
 let rec distinct (l : 'a list) : 'a list = 
-    if(l=[]) then []
-    else
-        let rec aux (a: 'a list) (lista: 'a list) : 'a list=
-            match a with
-                [] when a=[]->lista
-                |x::xs->if isThere x lista then aux xs lista
-                        else 
-                        aux xs (lista@[x])
-            in
-        aux l []
+    let rec aux (a: 'a list) (lista: 'a list) : 'a list=
+        match a with
+            [] when a=[]->lista
+            |x::xs->if isThere x lista then aux xs lista
+                    else 
+                    aux xs (lista@[x])
+    in
+    aux l []
                 
 
     

@@ -80,21 +80,21 @@ let rec choose k (l:'a list)=
 
 //6
 
-let rec strike_ball l1 l2=
+let strike_ball list1 list2=
     let rec strike l1 l2=
         match (l1,l2) with
             (_,[])->0
             |([],_)->0
-            |(x::xs,y::ys)->if(isThere x l2)&&(x<>y) then 1+(strike xs ys)
-                            else (strike xs l2)
+            |(x::xs,y::ys)->if((isThere x list2)&&(x<>y)) then 1+(strike xs ys)
+                            else (strike xs ys)
     let rec ball l1 l2=
         match (l1,l2) with
             (_,[])->0
             |([],_)->0
-            |(x::xs,y::ys)->if(isThere x l2)&&(x=y) then 1+(ball xs ys)
-                            else (ball xs l2)
+            |(x::xs,y::ys)->if((isThere x list2)&&(x=y)) then 1+(ball xs ys)
+                            else (ball xs ys)
     in
-    ((strike l1 l2),(ball l1 l2))
+    ((strike list1 list2),(ball list1 list2))
 
      
 
